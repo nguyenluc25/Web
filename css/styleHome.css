@@ -1,0 +1,259 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Uchen', serif;
+}
+.all-content{
+    background: #2e1700;
+}
+/* navbar */
+.navbar{
+    background-color: #573818;
+    padding-left: 60px;
+    font-weight: bold;
+    width: 100%;
+}
+/* .navbar.sticky {
+    background: #573818;
+} */
+#logo{
+    font-size: 23px;
+    color: white;
+}
+#logo img{
+    margin-bottom: 15px;
+}
+.navbar-nav{
+    margin-left: 10px;
+}
+.nav-link{
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black;
+    margin-left: 15px;
+    transition: 0.5s ease;
+}
+.nav-link:hover{
+    background-color: rgba(161, 109, 14, 1);
+    color: white;
+    border-radius: 5px;
+}
+.dropdown-menu{
+    background-color: rgba(161, 109, 14, 1) !important;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black;
+    margin-left: 15px;
+    transition: 0.5s ease;
+}
+.dropdown-menu a{
+    color: white;
+}
+.icons{
+    margin-left: 30px;
+}
+.icons img{
+    margin-left: 10px;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+.icons img:hover{
+    transform: translateY(-5px);
+}
+@media screen and (max-width:330px){
+    #logo{
+        font-size: 15px;
+    }
+}
+/* navbar end*/
+/* slider */
+/* Make the image fully responsive */
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+/* slider end */
+
+/* top cards */
+#box{
+    margin-top: 50px;
+}
+#box .card{
+    box-shadow: 0px 0px 5px black;
+    margin-top: 10px;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+#box .card:hover{
+    transform: translateY(-10px);
+}
+/* top cards end */
+
+/* product cards */
+#product-cards h1{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 50px;
+    color: rgba(161, 109, 14, 1);
+    text-shadow: 1px 1px 1px black;
+    border-bottom: 2px solid rgba(161, 109, 14, 1);
+}
+#product-cards .card{
+    background-color: rgba(161, 109, 14, 1);
+    box-shadow: 0 0 3px black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.overlay{
+    display: block;
+    opacity: 0;
+    position: absolute;
+    top: 10%;
+    margin-left: 0;
+    width: 70px;
+}
+#product-cards .card:hover .overlay{
+    opacity: 1;
+    margin-left: 5%;
+    transition: 0.5s ease;
+}
+.overlay i img{
+    background-color: #2e1700;
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+    padding: 7%;
+    margin: -20%;
+    margin-bottom: 5%;
+    cursor: pointer;
+}
+.overlay .btn-secondary{
+    background: transparent !important;
+    border: none;
+    box-shadow: none;
+}
+#product-cards h3{
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+.star .checked{
+    color: yellow;
+}
+#product-cards p{
+    color: #2e1700;
+    font-weight: bold;
+}
+#product-cards h6{
+    font-size: 20px;
+    color: #2e1700;
+    font-weight: bold;
+}
+#product-cards h6 span button{
+    width: 100px;
+    height: 26px;
+    font-size: 15px;
+    background-color: transparent;
+    letter-spacing: 3px;
+    border: 2px solid #573818;
+    border-radius: 5px;
+    float: right;
+    font-weight: bold;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+#product-cards h6 span button:hover{
+    background-color: #2e1700;
+    color: white;
+}
+/* product cards end */
+
+/* gallary */
+#gallery{
+    margin-top: 50px;
+}
+#gallery h1{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 50px;
+    color: rgba(161, 109, 14, 1);
+    text-shadow: 1px 1px 1px black;
+    border-bottom: 2px solid rgba(161, 109, 14, 1);
+}
+#gallery .card{
+    box-shadow: 3px 3px 3px black;
+    cursor: pointer;
+}
+#gallery .overlay{
+    opacity: 0;
+    width: 100%;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+#gallery .card:hover .overlay{
+    opacity: 5;
+    margin-top: 20%;
+    transition: 0.5s ease;
+}
+/* gallery end*/
+
+/* footer */
+
+#footer{
+    color: white;
+    background-color: #703f07;
+    margin-top: 50px;
+}
+
+.footer-text-start {
+    padding: 20px 0px;
+    font-weight: bold;
+}
+
+.footer-text-start li a{
+    color: white;
+}
+
+.footer-text-start img {
+    padding-bottom: 20px;
+}
+
+.footer-text-start h5 {
+    font-size: 25px;
+    color: #f0c76e;
+}
+
+.footer-top-flex {
+    display: flex;
+}
+
+.footer-top-flex i {
+    padding-right: 10px;
+}
+
+.footer-top-hover a:hover{
+    color: #f0c76e;
+}
+
+.footer-top-hover li {
+    padding: 10px 0px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+li {
+    list-style: none;
+}
+
+.footer-bottom {
+    width: 100%;
+    background-color: #613400;
+}
+
+.footer-bottom-copyright {
+    font-size: 18px;
+    padding: 15px 0px;
+}
+/* footer end */
