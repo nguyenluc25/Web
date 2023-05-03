@@ -6,20 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trang chủ</title>
   <link rel="shortcut icon" type="image" href="./image/logo.png">
-  <link rel="stylesheet" href="css/styleHome.css">
   
+  <!-- <link rel="stylesheet" href="./css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styleHome.css">
+
+
+  <!-- <script src="./js/jquery-3.6.4.min.js"></script> -->
+  <!-- <script src="./js/bootstrap.min.js"></script> -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  
-  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-  
+  <script src="./js/script.js"></script>
+  <script src="./js/datajson.js"></script>
 
+
+
+
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Uchen&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing+Script">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css"/>
+
 </head>
 <body>
   <div class="all-content">
@@ -37,10 +47,10 @@
           <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="#">Trang chủ</a>
+                <a class="nav-link" href="./TrangChu.html">Trang chủ</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Thông tin</a>
+                <a class="nav-link" href="./ThongTin.html">Thông tin</a>
               </li>
               <!-- dropdown -->
               <li class="nav-item dropdown">
@@ -48,10 +58,9 @@
                       Sản phẩm
                   </a>
                   <div class="dropdown-menu">
-                      <a href="#" class="dropdown-item">Bánh sinh nhật</a>
-                      <a href="#" class="dropdown-item">Bánh socola</a>
-                      <a href="#" class="dropdown-item">Bánh tiệc</a>
-                      <a href="#" class="dropdown-item">Bánh cốc</a>
+                      <a href="TrangChu.html#banh" class="dropdown-item">Bánh</a>
+                      <a href="TrangChu.html#keo" class="dropdown-item">Kẹo</a>
+                      <a href="TrangChu.html#socola" class="dropdown-item">Sô cô la</a>
                   </div>
               </li>
               <!-- dropdown -->
@@ -61,9 +70,23 @@
             </ul>
           </div>
           <div class="icons">
-              <img src="./image/heart.png" alt="" width="20px">
-              <img src="./image/add.png" alt="" width="25px">
-              <img src="./image/user.png" alt="" width="20px">
+              <div class="" style="width: 300px;">
+                <div class="bg-white rounded shadow">
+                  <form action="">
+                    <div class="bg-light rounded rounded-pill shadow-sm">
+                      <div class="input-group">
+                        <input type="search" placeholder="Nhập từ bạn cần tìm?" aria-describedby="button-addon1" class="form-control border-0 bg-light">
+                        <div class="input-group-append">
+                          <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <img src="./image/heart.png" alt="" width="30px">
+              <img src="./image/add.png" alt="" width="35px">
+              <img src="./image/user.png" alt="" width="30px">
           </div>
         </nav>
       <!-- navbar end -->
@@ -127,18 +150,18 @@
       <!-- product cards -->
       <section id="product-cards">
         <div class="container">
-          <h1>BÁNH</h1>
+          <h1 id="banh">BÁNH</h1>
           <div class="row" style="margin-top: 50px;">
             <div class="col-md-3 py-3 py-md-0">
               <div class="card">
                 <div class="overlay">
-                  <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
+                  <button onclick="setMasp(1)" type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
                   <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="#" width="30px"></i></button>
                   <button type="button" class="btn btn-secondary" title="Add to Card"><i><img src="./image/add.png" alt="#" width="30px"></i></button>
                 </div>
-                <img src="./image/c1.png" alt="#">
+                <img src="./image/banhbonglan.png" alt="#" onclick="setMasp(1)">
                 <div class="card-body">
-                  <h3>Bánh kem</h3>
+                  <h3>Bánh bông lan</h3>
                   <div class="star">
                     <i class="bx bxs-star checked"></i>
                     <i class="bx bxs-star checked"></i>
@@ -146,21 +169,21 @@
                     <i class="bx bxs-star checked"></i>
                     <i class="bx bxs-star checked"></i>
                   </div>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                  <h6>100.000₫<span><button>Add Cart</button></span></h6>
+                  <p>Hộp Bánh Bông Lan Freddi Swiss Roll Vị Tiramisu 300G</p>
+                  <h6>100.000₫<span><button onclick="setMasp(1)" >Xem thêm</button></span></h6>
                 </div>
               </div>
             </div>
             <div class="col-md-3 py-3 py-md-0">
               <div class="card">
                 <div class="overlay">
-                  <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
+                  <button onclick="setMasp(2)" type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
                   <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="#" width="30px"></i></button>
                   <button type="button" class="btn btn-secondary" title="Add to Card"><i><img src="./image/add.png" alt="#" width="30px"></i></button>
                 </div>
-                <img src="./image/c1.png" alt="#">
+                <img src="./image/BanhPanettone.png" alt="#" onclick="setMasp(2)">
                 <div class="card-body">
-                  <h3>Bánh kem</h3>
+                  <h3>Bánh Panettone</h3>
                   <div class="star">
                     <i class="bx bxs-star checked"></i>
                     <i class="bx bxs-star checked"></i>
@@ -168,21 +191,21 @@
                     <i class="bx bxs-star checked"></i>
                     <i class="bx bxs-star checked"></i>
                   </div>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                  <h6>100.000₫<span><button>Add Cart</button></span></h6>
+                  <p>Hộp Bánh Panettone Maina Zuppa Inglese 750G</p>
+                  <h6>480.000₫<span><button onclick="setMasp(2)">Xem thêm</button></span></h6>
                 </div>
               </div>
             </div>
             <div class="col-md-3 py-3 py-md-0">
               <div class="card">
                 <div class="overlay">
-                  <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
+                  <button onclick="setMasp(3)" type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
                   <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="#" width="30px"></i></button>
                   <button type="button" class="btn btn-secondary" title="Add to Card"><i><img src="./image/add.png" alt="#" width="30px"></i></button>
                 </div>
-                <img src="./image/c1.png" alt="#">
+                <img src="./image/BanhPanettone1.png" alt="#" onclick="setMasp(3)">
                 <div class="card-body">
-                  <h3>Bánh kem</h3>
+                  <h3>Bánh Panettone</h3>
                   <div class="star">
                     <i class="bx bxs-star checked"></i>
                     <i class="bx bxs-star checked"></i>
@@ -190,21 +213,21 @@
                     <i class="bx bxs-star checked"></i>
                     <i class="bx bxs-star checked"></i>
                   </div>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                  <h6>100.000₫<span><button>Add Cart</button></span></h6>
+                  <p>Hộp Bánh Panettone Maina Vị Chocolate 100G</p>
+                  <h6>95.000₫<span><button onclick="setMasp(3)">Xem thêm</button></span></h6>
                 </div>
               </div>
             </div>
             <div class="col-md-3 py-3 py-md-0">
               <div class="card">
                 <div class="overlay">
-                  <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
+                  <button onclick="setMasp(4)" type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
                   <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="#" width="30px"></i></button>
                   <button type="button" class="btn btn-secondary" title="Add to Card"><i><img src="./image/add.png" alt="#" width="30px"></i></button>
                 </div>
-                <img src="./image/c1.png" alt="#">
+                <img src="./image/banhbonglan1.png" alt="#" onclick="setMasp(4)">
                 <div class="card-body">
-                  <h3>Bánh kem</h3>
+                  <h3>Bánh bông lan</h3>
                   <div class="star">
                     <i class="bx bxs-star checked"></i>
                     <i class="bx bxs-star checked"></i>
@@ -212,8 +235,98 @@
                     <i class="bx bxs-star checked"></i>
                     <i class="bx bxs-star checked"></i>
                   </div>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                  <h6>100.000₫<span><button>Add Cart</button></span></h6>
+                  <p>Bánh Bông Lan Freddi Dolcetto Nhân Kem Vani 200G</p>
+                  <h6>56.000₫<span><button onclick="setMasp(4)">Xem thêm</button></span></h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row" style="margin-top: 50px;">
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <div class="overlay">
+                  <button onclick="setMasp(5)" type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Card"><i><img src="./image/add.png" alt="#" width="30px"></i></button>
+                </div>
+                <img src="./image/banhbonglanto2.png" alt="#" onclick="setMasp(5)">
+                <div class="card-body">
+                  <h3>Bánh bông lan</h3>
+                  <div class="star">
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                  </div>
+                  <p>Hộp Bánh Bông Lan Orion Custard Hàn Quốc 276G (12P)</p>
+                  <h6>117.000₫<span><button onclick="setMasp(5)">Xem thêm</button></span></h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <div class="overlay">
+                  <button onclick="setMasp(6)" type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Card"><i><img src="./image/add.png" alt="#" width="30px"></i></button>
+                </div>
+                <img src="./image/BanhBaumkuchen.jpg" alt="#" onclick="setMasp(6)">
+                <div class="card-body">
+                  <h3>Bánh Baumkuchen</h3>
+                  <div class="star">
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                  </div>
+                  <p>Bánh Baumkuchen Cắt Lát Vị Socola 240g (nâu)</p>
+                  <h6>125.000₫<span><button onclick="setMasp(6)">Xem thêm</button></span></h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <div class="overlay">
+                  <button onclick="setMasp(7)" type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Card"><i><img src="./image/add.png" alt="#" width="30px"></i></button>
+                </div>
+                <img src="./image/banhtrung.jpg" alt="#" onclick="setMasp(7)">
+                <div class="card-body">
+                  <h3>Bánh trứng</h3>
+                  <div class="star">
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                  </div>
+                  <p>Bánh Trứng Custard Cake Lotte 248g Nhật</p>
+                  <h6>145.000₫<span><button onclick="setMasp(7)">Xem thêm</button></span></h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <div class="overlay">
+                  <button onclick="setMasp(8)" type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Card"><i><img src="./image/add.png" alt="#" width="30px"></i></button>
+                </div>
+                <img src="./image/BanhCustard.png" alt="#" onclick="setMasp(8)">
+                <div class="card-body">
+                  <h3>Bánh Custard</h3>
+                  <div class="star">
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                  </div>
+                  <p>Bánh Custard Caramel Hộp 272g</p>
+                  <h6>110.000₫<span><button onclick="setMasp(8)">Xem thêm</button></span></h6>
                 </div>
               </div>
             </div>
@@ -222,18 +335,18 @@
       </section>
       <section id="product-cards">
         <div class="container">
-          <h1>BÁNH SINH NHẬT</h1>
+          <h1 id="keo">KẸO</h1>
           <div class="row" style="margin-top: 50px;">
             <div class="col-md-3 py-3 py-md-0">
               <div class="card">
                 <div class="overlay">
-                  <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
+                  <button onclick="setMasp(9)" type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
                   <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="#" width="30px"></i></button>
                   <button type="button" class="btn btn-secondary" title="Add to Card"><i><img src="./image/add.png" alt="#" width="30px"></i></button>
                 </div>
-                <img src="./image/c1.png" alt="#">
+                <img src="./image/keosoda.jpg" alt="#" onclick="setMasp(9)">
                 <div class="card-body">
-                  <h3>Bánh kem</h3>
+                  <h3>Kẹo soda</h3>
                   <div class="star">
                     <i class="bx bxs-star checked"></i>
                     <i class="bx bxs-star checked"></i>
@@ -241,21 +354,21 @@
                     <i class="bx bxs-star checked"></i>
                     <i class="bx bxs-star checked"></i>
                   </div>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                  <h6>100.000₫<span><button>Add Cart</button></span></h6>
+                  <p>Gói Kẹo Soda Lion Nhật Bản</p>
+                  <h6>50.000₫<span><button onclick="setMasp(9)">Xem thêm</button></span></h6>
                 </div>
               </div>
             </div>
             <div class="col-md-3 py-3 py-md-0">
               <div class="card">
                 <div class="overlay">
-                  <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
+                  <button onclick="setMasp(10)" type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
                   <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="#" width="30px"></i></button>
                   <button type="button" class="btn btn-secondary" title="Add to Card"><i><img src="./image/add.png" alt="#" width="30px"></i></button>
                 </div>
-                <img src="./image/c1.png" alt="#">
+                <img src="./image/keotraicay.jpg" alt="#" onclick="setMasp(10)">
                 <div class="card-body">
-                  <h3>Bánh kem</h3>
+                  <h3>Kẹo trái cây</h3>
                   <div class="star">
                     <i class="bx bxs-star checked"></i>
                     <i class="bx bxs-star checked"></i>
@@ -263,21 +376,21 @@
                     <i class="bx bxs-star checked"></i>
                     <i class="bx bxs-star checked"></i>
                   </div>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                  <h6>100.000₫<span><button>Add Cart</button></span></h6>
+                  <p>Gói Kẹo Trái Cây Mitsuya Cider</p>
+                  <h6>45.000₫<span><button onclick="setMasp(10)">Xem thêm</button></span></h6>
                 </div>
               </div>
             </div>
             <div class="col-md-3 py-3 py-md-0">
               <div class="card">
                 <div class="overlay">
-                  <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
+                  <button onclick="setMasp(11)" type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
                   <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="#" width="30px"></i></button>
                   <button type="button" class="btn btn-secondary" title="Add to Card"><i><img src="./image/add.png" alt="#" width="30px"></i></button>
                 </div>
-                <img src="./image/c1.png" alt="#">
+                <img src="./image/keodeo.jpg" alt="#" onclick="setMasp(11)">
                 <div class="card-body">
-                  <h3>Bánh kem</h3>
+                  <h3>Kẹo dẻo</h3>
                   <div class="star">
                     <i class="bx bxs-star checked"></i>
                     <i class="bx bxs-star checked"></i>
@@ -285,21 +398,21 @@
                     <i class="bx bxs-star checked"></i>
                     <i class="bx bxs-star checked"></i>
                   </div>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                  <h6>100.000₫<span><button>Add Cart</button></span></h6>
+                  <p>Gói Kẹo Dẻo Trái Cây UHA 85g</p>
+                  <h6>39.000₫<span><button onclick="setMasp(11)">Xem thêm</button></span></h6>
                 </div>
               </div>
             </div>
             <div class="col-md-3 py-3 py-md-0">
               <div class="card">
                 <div class="overlay">
-                  <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
+                  <button onclick="setMasp(12)" type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
                   <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="#" width="30px"></i></button>
                   <button type="button" class="btn btn-secondary" title="Add to Card"><i><img src="./image/add.png" alt="#" width="30px"></i></button>
                 </div>
-                <img src="./image/c1.png" alt="#">
+                <img src="./image/keodochoi.jpg" alt="#" onclick="setMasp(12)">
                 <div class="card-body">
-                  <h3>Bánh kem</h3>
+                  <h3>Kẹo đồ chơi</h3>
                   <div class="star">
                     <i class="bx bxs-star checked"></i>
                     <i class="bx bxs-star checked"></i>
@@ -307,8 +420,283 @@
                     <i class="bx bxs-star checked"></i>
                     <i class="bx bxs-star checked"></i>
                   </div>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                  <h6>100.000₫<span><button>Add Cart</button></span></h6>
+                  <p>Cây Kẹo Đồ Chơi Wacky Shark</p>
+                  <h6>50.000₫<span><button onclick="setMasp(12)">Xem thêm</button></span></h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row" style="margin-top: 50px;">
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <div class="overlay">
+                  <button onclick="setMasp(13)" type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Card"><i><img src="./image/add.png" alt="#" width="30px"></i></button>
+                </div> 
+                <img src="./image/keodochoi1.jpg" alt="#" onclick="setMasp(13)">
+                <div class="card-body">
+                  <h3>Kẹo đồ chơi</h3>
+                  <div class="star">
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                  </div>
+                  <p>Cây Kẹo Đồ Chơi Froggy Chomp</p>
+                  <h6>50.000₫<span><button onclick="setMasp(13)">Xem thêm</button></span></h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <div class="overlay">
+                  <button onclick="setMasp(14)" type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Card"><i><img src="./image/add.png" alt="#" width="30px"></i></button>
+                </div>
+                <img src="./image/keogum.jpg" alt="#" onclick="setMasp(14)">
+                <div class="card-body">
+                  <h3>Kẹo gum</h3>
+                  <div class="star">
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                  </div>
+                  <p>Kẹo Gum Trident Mỹ Vị Trái cây</p>
+                  <h6>30.000₫<span><button onclick="setMasp(14)">Xem thêm</button></span></h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <div class="overlay">
+                  <button onclick="setMasp(15)" type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Card"><i><img src="./image/add.png" alt="#" width="30px"></i></button>
+                </div>
+                <img src="./image/keodeo1.jpg" alt="#" onclick="setMasp(15)">
+                <div class="card-body">
+                  <h3>Kẹo dẻo</h3>
+                  <div class="star">
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                  </div>
+                  <p>Kẹo Dẻo Haribo Super Mario 175G</p>
+                  <h6>85.000₫<span><button onclick="setMasp(15)">Xem thêm</button></span></h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <div class="overlay">
+                  <button onclick="setMasp(16)" type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Card"><i><img src="./image/add.png" alt="#" width="30px"></i></button>
+                </div>
+                <img src="./image/keogum1.jpg" alt="#" onclick="setMasp(16)">
+                <div class="card-body">
+                  <h3>Kẹo gum</h3>
+                  <div class="star">
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                  </div>
+                  <p>Hộp Kẹo Gum Trident Ice Vị Chanh 40 Viên</p>
+                  <h6>33.000₫<span><button onclick="setMasp(16)">Xem thêm</button></span></h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="product-cards">
+        <div class="container">
+          <h1 id="socola">SÔ CÔ LA</h1>
+          <div class="row" style="margin-top: 50px;">
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <div class="overlay">
+                  <button onclick="setMasp(17)" type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Card"><i><img src="./image/add.png" alt="#" width="30px"></i></button>
+                </div>
+                <img src="./image/socolasua.jpg" alt="#" onclick="setMasp(17)">
+                <div class="card-body">
+                  <h3>Chocolate sữa</h3>
+                  <div class="star">
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                  </div>
+                  <p>Chocolate vị sữa nguyên chất Kisses 330 viên 1.58kg</p>
+                  <h6>690.000₫<span><button onclick="setMasp(17)">Xem thêm</button></span></h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <div class="overlay">
+                  <button onclick="setMasp(18)" type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Card"><i><img src="./image/add.png" alt="#" width="30px"></i></button>
+                </div>
+                <img src="./image/socoladang.jpg" alt="#" onclick="setMasp(18)">
+                <div class="card-body">
+                  <h3>Chocolate đắng</h3>
+                  <div class="star">
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i  >
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                  </div>
+                  <p>Chocolate Đắng Nhân Việt Quất Brookside 20g</p>
+                  <h6>20.000₫<span><button onclick="setMasp(18)">Xem thêm</button></span></h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <div class="overlay">
+                  <button onclick="setMasp(19)" type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Card"><i><img src="./image/add.png" alt="#" width="30px"></i></button>
+                </div>
+                <img src="./image/socoladang1.jpg" alt="#" onclick="setMasp(19)">
+                <div class="card-body">
+                  <h3>Chocolate đắng</h3>
+                  <div class="star">
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                  </div>
+                  <p>Socola Đắng 90% Cacao Lindt Excellence</p>
+                  <h6>115.000₫<span><button onclick="setMasp(19)">Xem thêm</button></span></h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <div class="overlay">
+                  <button onclick="setMasp(20)" type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Card"><i><img src="./image/add.png" alt="#" width="30px"></i></button>
+                </div>
+                <img src="./image/socolaHershey.jpg" alt="#" onclick="setMasp(20)">
+                <div class="card-body">
+                  <h3>Chocolate Hershey's</h3>
+                  <div class="star">
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                  </div>
+                  <p>Chocolate Hershey's Túi Đại Mỹ 145 Viên</p>
+                  <h6>690.000₫<span><button onclick="setMasp(20)">Xem thêm</button></span></h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row" style="margin-top: 50px;">
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <div class="overlay">
+                  <button onclick="setMasp(21)" type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Card"><i><img src="./image/add.png" alt="#" width="30px"></i></button>
+                </div>
+                <img src="./image/socolam&m.jpg" alt="#" onclick="setMasp(21)">
+                <div class="card-body">
+                  <h3>Chocolate M&M</h3>
+                  <div class="star">
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                  </div>
+                  <p>Socola M&M Nhân Đậu Phộng 396g</p>
+                  <h6>225.000₫<span><button onclick="setMasp(21)">Xem thêm</button></span></h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <div class="overlay">
+                  <button onclick="setMasp(22)" type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Card"><i><img src="./image/add.png" alt="#" width="30px"></i></button>
+                </div>
+                <img src="./image/socolasua1.jpg" alt="#" onclick="setMasp(22)">
+                <div class="card-body">
+                  <h3>Chocolate sữa</h3>
+                  <div class="star">
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                  </div>
+                  <p>Chocolate Sữa Nhân Việt Quất Khô Bernique 70g</p>
+                  <h6>70.000₫<span><button onclick="setMasp(22)">Xem thêm</button></span></h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <div class="overlay">
+                  <button onclick="setMasp(23)" type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Card"><i><img src="./image/add.png" alt="#" width="30px"></i></button>
+                </div>
+                <img src="./image/socolahanhnhan.jpg" alt="#" onclick="setMasp(23)">
+                <div class="card-body">
+                  <h3>Chocolate hạnh nhân</h3>
+                  <div class="star">
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                  </div>
+                  <p>Chocolate Hạnh Nhân Trà Xanh Tiramisu 100g</p>
+                  <h6>82.000₫<span><button onclick="setMasp(23)">Xem thêm</button></span></h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <div class="overlay">
+                  <button onclick="setMasp(24)" type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="#" width="30px"></i></button>
+                  <button type="button" class="btn btn-secondary" title="Add to Card"><i><img src="./image/add.png" alt="#" width="30px"></i></button>
+                </div>
+                <img src="./image/socola.jpg" alt="#" onclick="setMasp(24)">
+                <div class="card-body">
+                  <h3>Chocolate</h3>
+                  <div class="star">
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                  </div>
+                  <p>Chocolate Nhân Rượu Mon Cheri Ferrero 157g</p>
+                  <h6>160.000₫<span><button onclick="setMasp(24)">Xem thêm</button></span></h6>
                 </div>
               </div>
             </div>
@@ -454,8 +842,12 @@
         </div>
       </footer>
       <!-- footer end-->
+      <!-- back to top -->
+      
+      <!-- back to top end -->
   </div>
 </body>
 <script>
+  
 </script>
 </html>
