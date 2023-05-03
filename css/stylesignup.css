@@ -4,6 +4,9 @@
     box-sizing: border-box;
     font-family: 'Uchen', serif;
 }
+.error{
+    border: 1px solid red;
+}
 .all-content{
     background: #2e1700;
 }
@@ -127,7 +130,7 @@
      
    }
    .container_user>#AccountForm>input[type=text], .container_user>#AccountForm>input[type=password]{
-    margin-top: 40px;,
+    margin-top: 0px;
     -webkit-transition: all .2s ease-out;
     -moz-transition: all .2s ease-out;
     -ms-transition: all .2s ease-out;

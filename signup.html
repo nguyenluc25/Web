@@ -18,8 +18,116 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Uchen&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css"/>
-
     <title>Đăng ký  </title>
+    <script>
+      $(document).ready(function(){
+         function KiemTraEmail(){
+          var email = $("#txtEmail").val();
+          var batemail = /^\w+(@gamil.com)$/;
+         
+          if(email == ""){
+            $("#erma").html("Hãy nhập email !");
+            $("#txtEmail").addClass("error");
+            return false;
+          }else{
+            if(batemail.test(email) == false){
+              $("#erma").html("Lỗi Email !");
+              $("#txtEmail").addClass("error");
+              return false;
+            }else{
+              $("#erma").html("(*)");
+              $("#txtEmail").removeClass("error");
+            }
+          }
+           return true;
+         }
+         $("#txtEmail").blur(function(){
+          KiemTraEmail();
+         })
+         function KiemTraTen(){
+        var ten = $("#txtTen").val();
+        var batten = /^([A-Z]{1}[a-z]+)(\s[A-Z]{1}[a-z]+)*$/;
+        if(ten == ""){
+            $("#erten").html("Hãy nhập Tên");
+            $("#txtTen").addClass("error");
+          return false;
+        }else{
+            if(batten.test(ten) == false){
+                $("#erten").html("Lỗi nhập tên");
+                $("#txtTen").addClass("error");
+                return false;   
+            }else{
+                $("#erten").html("(*)");
+                $("#txtTen").removeClass("error");
+            }
+        }
+        return true;
+    
+    }
+    $("#txtTen").blur(function(e){
+        KiemTraTen();
+    });  
+    function KiemMatKhau(){
+        var mk = $("#txtMaKhau").val();
+        var batmk = /^\w{8,10}$/;
+        if(mk == ""){
+            $("#ermk").html("Hãy nhập mật khẩu");
+            $("#txtMaKhau").addClass("error");
+          return false;
+        }else{
+            if(batmk.test(mk) == false){
+                $("#ermk").html("Mật khẩu phải bao gồm 8-10 chữ số");
+                $("#txtMaKhau").addClass("error");
+                return false;   
+            }else{
+                $("#ermk").html("(*)");
+                $("#txtMaKhau").removeClass("error");
+            }
+        }
+        return true;
+    
+    }
+    $("#txtMaKhau").blur(function(e){
+      KiemMatKhau();
+    });  
+    function KiemMatNhapLaiKhau(){
+        var mk = $("#txtMaKhau").val();
+        var rmk = $("#txtNhapLaiMK").val();
+        
+        if(rmk == ""){
+            $("#errmk").html("Hãy nhập mật khẩu nhập lại");
+            $("#txtNhapLaiMK").addClass("error");
+          return false;
+        }else{
+            if(mk != rmk){
+                $("#errmk").html("Mật khẩu nhập lại không trùng");
+                $("#txtNhapLaiMK").addClass("error");
+                return false;   
+            }else{
+                $("#errmk").html("(*)");
+                $("#txtNhapLaiMK").removeClass("error");
+            }
+        }
+        return true;
+    
+    }
+    $("#txtNhapLaiMK").blur(function(e){
+      KiemMatNhapLaiKhau();
+    }); 
+    function resetvalue(){
+      $("#txtMaKhau").val("");
+      $("#txtTen").val("");
+      $("#txtNhapLaiMK").val("");
+      $("#txtEmail").val("");
+    }
+    $("#btnTao").click(function(){
+      if( KiemTraEmail()==true && KiemMatKhau() == true && KiemTraEmail() == true && KiemTraTen()==true){
+        alert("Tạo Thành công !");
+        resetvalue();
+      }
+    })
+      });
+    </script>
 </head>
 <body>
     <div class="all-content">
@@ -77,11 +185,15 @@
     </div>
     <div class="container_user">
         <form action="" id="AccountForm">
-            <input type="email" name="" id="" placeholder="Email">
-            <input type="text" name="" id="" placeholder="Họ và tên">
-            <input type="password" name="" id="" placeholder="Mật khẩu">
-            <input type="password" name="" id="" placeholder="Nhập lại mật khẩu">
-            <p><input type="submit" name="" id="" value="Tạo" style="float: left;">
+            <input type="email" name="" id="txtEmail" placeholder="Email">
+            <label for="" id="erma" style="color: red;">(*)</label>
+            <input type="text" name="" id="txtTen" placeholder="Họ và tên">
+            <label for="" id="erten" style="color: red;">(*)</label>
+            <input type="password" name="" id="txtMaKhau" placeholder="Mật khẩu">
+            <label for="" id="ermk" style="color: red;">(*)</label>
+            <input type="password" name="" id="txtNhapLaiMK" placeholder="Nhập lại mật khẩu">
+            <label for="" id="errmk" style="color: red;">(*)</label>
+            <p><input type="button" name="" id="btnTao" value="Tạo" style="float: left;">
             <a href="TrangChu.html"> Quay Lại</a>
             </p>
         </form>
