@@ -110,7 +110,9 @@
             </div>
             <div class="row">
               <p class="col-md-2">Giá: </p>
-              <div id="dongia" class="col-md-10">100.000₫</div>
+              <div class="col-md-10" style="display: flex;">
+                <div id="dongia">100.000</div> <span>₫</span>
+              </div>
             </div>
             <div class="row">
               <p class="col-md-2">Kho: </p>
@@ -126,7 +128,7 @@
             </div>
             <div class="row">
               <div class="col-md-12">
-                <button type="button" class="btn" id="dathang">Đặt hàng</button>
+                <button onclick="datHang()" type="button" class="btn" id="dathang">Đặt hàng</button>
               </div>
             </div>
           </div>
@@ -316,26 +318,30 @@
       <!-- footer end-->
     </div>
 </body>
-<!-- <script>
-  $(document).ready(function () {
 
-  let dssp = JSON.parse(localStorage.getItem("dssp"))
-  let masp = localStorage.getItem("masp")
-
-  let temp = dssp.find(sp => sp.masp == masp)
-
-  $("#tensp").html(temp.tensp)
-  $("#dongia").html(temp.dongia)
-  $("#mota").html(temp.mota)
-  function napSP(sp) {
-      let temp = "<img src='" + sp.hinhanh + "' alt=''>"
-      $("#ha").html(temp)
+<script>
+  function datHang() {
+    window.location.href = "./dathang.html";
   }
-  $(document).ready(function () {
-      dssp.forEach(sp => {
-          napSP(temp)
-        });
-    });
-  });
-</script> -->
+  // $(document).ready(function () {
+
+  // let dssp = JSON.parse(localStorage.getItem("dssp"))
+  // let masp = localStorage.getItem("masp")
+
+  // let temp = dssp.find(sp => sp.masp == masp)
+
+  // $("#tensp").html(temp.tensp)
+  // $("#dongia").html(temp.dongia)
+  // $("#mota").html(temp.mota)
+  // function napSP(sp) {
+  //     let temp = "<img src='" + sp.hinhanh + "' alt=''>"
+  //     $("#ha").html(temp)
+  // }
+  // $(document).ready(function () {
+  //     dssp.forEach(sp => {
+  //         napSP(temp)
+  //       });
+  //   });
+  // });
+</script>
 </html>

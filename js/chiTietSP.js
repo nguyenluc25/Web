@@ -35,5 +35,9 @@ $(document).ready(function () {
           }
           $this.attr('value', d).val(d)
         })
-      })
+    })
 });
+
+function datHang() {
+    window.location.href = "dathang.html";
+}

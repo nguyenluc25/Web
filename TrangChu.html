@@ -50,7 +50,7 @@
                 <a class="nav-link" href="./TrangChu.html">Trang chủ</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./ThongTin.html">Thông tin</a>
+                <a class="nav-link" href="thongtin.html">Thông tin</a>
               </li>
               <!-- dropdown -->
               <li class="nav-item dropdown">
@@ -65,28 +65,34 @@
               </li>
               <!-- dropdown -->
               <li class="nav-item">
-                <a class="nav-link" href="#">Liên hệ</a>
+                <a class="nav-link" href="/lienhe.html">Liên hệ</a>
               </li>
             </ul>
           </div>
           <div class="icons">
-              <div class="" style="width: 300px;">
-                <div class="bg-white rounded shadow">
-                  <form action="">
-                    <div class="bg-light rounded rounded-pill shadow-sm">
-                      <div class="input-group">
-                        <input type="search" placeholder="Nhập từ bạn cần tìm?" aria-describedby="button-addon1" class="form-control border-0 bg-light">
-                        <div class="input-group-append">
-                          <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
-                        </div>
+            <div class="" style="width: 300px;">
+              <div class="bg-white rounded shadow">
+                <form action="">
+                  <div class="bg-light rounded rounded-pill shadow-sm">
+                    <div class="input-group">
+                      <input type="search" placeholder="Nhập từ bạn cần tìm?" aria-describedby="button-addon1" class="form-control border-0 bg-light">
+                      <div class="input-group-append">
+                        <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
                       </div>
                     </div>
-                  </form>
-                </div>
+                  </div>
+                </form>
               </div>
-              <img src="./image/heart.png" alt="" width="30px">
-              <img src="./image/add.png" alt="" width="35px">
-              <img src="./image/user.png" alt="" width="30px">
+            </div>
+              <img src="./image/heart.png" alt="" width="20px">
+              <img src="./image/add.png" alt="" width="25px">
+              <div id="li_acount" style="cursor: pointer; display: inline-block;" >
+             <img src="./image/user.png" alt=""  width="25px">
+             <ul id="ulnav_account" >
+              <li><a href="login.html">Đăng nhập</a></li>
+              <li><a href="signup.html" id="a_signin">Đăng ký</a></li>
+          </ul>
+          </div>
           </div>
         </nav>
       <!-- navbar end -->
@@ -140,7 +146,7 @@
           </div>
           <div class="col-md-4 py-3 py-md-0">
             <div class="card">
-              <img src="./image/box3.jpg" alt="#">
+              <img src="./image/box3.jpg" alt="#" >
             </div>
           </div>
         </div>
@@ -735,7 +741,6 @@
               </div>
             </div>
           </div>
-
           <div class="row" style="margin-top: 30px;">
             <div class="col-md-4 py-3 py-md-0">
               <div class="card">
@@ -847,6 +852,31 @@
   </div>
 </body>
 <script>
-  
+  const li_acount = document.getElementById('li_acount');
+   const ulnav_account = document.getElementById('ulnav_account');
+   // Khởi tạo biến boolean để lưu trạng thái của menu
+let isSubMenuOpen = false;
+// Gán sự kiện click cho button
+li_acount.addEventListener('click', function(e) {
+  if (isSubMenuOpen) {
+    // Nếu menu đang mở, thì ẩn nó đi
+    ulnav_account.style.display = 'none';
+    isSubMenuOpen = false;
+  } else {
+    // Nếu menu đang ẩn, thì hiện nó lên
+    ulnav_account.style.display = 'block';
+    isSubMenuOpen = true;
+  }
+  // Ngăn chặn sự kiện click trên document được kích hoạt
+  e.stopPropagation();
+});
+// Gán sự kiện click trên document
+document.addEventListener('click', function() {
+  // Nếu menu đang mở, thì ẩn nó đi
+  if (isSubMenuOpen) {
+    ulnav_account.style.display = 'none';
+    isSubMenuOpen = false;
+  }
+});
 </script>
 </html>

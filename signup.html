@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image" href="./image/logo.png">
+
+    <link rel="stylesheet" href="css/stylesignup.css">
+    <link rel="stylesheet" href="./css/styleHome.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing+Script">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Uchen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <title>Đăng ký  </title>
+    <script>
+      $(document).ready(function(){
+         function KiemTraEmail(){
+          var email = $("#txtEmail").val();
+          var batemail = /^\w+(@gmail.com)$/;
+         
+          if(email == ""){
+            $("#erma").html("Hãy nhập email !");
+            $("#txtEmail").addClass("error");
+            return false;
+          }else{
+            if(batemail.test(email) == false){
+              $("#erma").html("Lỗi Email !");
+              $("#txtEmail").addClass("error");
+              return false;
+            }else{
+              $("#erma").html("(*)");
+              $("#txtEmail").removeClass("error");
+            }
+          }
+           return true;
+         }
+         $("#txtEmail").blur(function(){
+          KiemTraEmail();
+         })
+         function KiemTraTen(){
+        var ten = $("#txtTen").val();
+        var batten = /^([A-Z]{1}[a-z]+)(\s[A-Z]{1}[a-z]+)*$/;
+        if(ten == ""){
+            $("#erten").html("Hãy nhập Tên");
+            $("#txtTen").addClass("error");
+          return false;
+        }else{
+            if(batten.test(ten) == false){
+                $("#erten").html("Lỗi nhập tên");
+                $("#txtTen").addClass("error");
+                return false;   
+            }else{
+                $("#erten").html("(*)");
+                $("#txtTen").removeClass("error");
+            }
+        }
+        return true;
+    
+    }
+    $("#txtTen").blur(function(e){
+        KiemTraTen();
+    });  
+    function KiemMatKhau(){
+        var mk = $("#txtMaKhau").val();
+        var batmk = /^\w{8,10}$/;
+        if(mk == ""){
+            $("#ermk").html("Hãy nhập mật khẩu");
+            $("#txtMaKhau").addClass("error");
+          return false;
+        }else{
+            if(batmk.test(mk) == false){
+                $("#ermk").html("Mật khẩu phải bao gồm 8-10 chữ số");
+                $("#txtMaKhau").addClass("error");
+                return false;   
+            }else{
+                $("#ermk").html("(*)");
+                $("#txtMaKhau").removeClass("error");
+            }
+        }
+        return true;
+    
+    }
+    $("#txtMaKhau").blur(function(e){
+      KiemMatKhau();
+    });  
+    function KiemMatNhapLaiKhau(){
+        var mk = $("#txtMaKhau").val();
+        var rmk = $("#txtNhapLaiMK").val();
+        
+        if(rmk == ""){
+            $("#errmk").html("Hãy nhập mật khẩu nhập lại");
+            $("#txtNhapLaiMK").addClass("error");
+          return false;
+        }else{
+            if(mk != rmk){
+                $("#errmk").html("Mật khẩu nhập lại không trùng");
+                $("#txtNhapLaiMK").addClass("error");
+                return false;   
+            }else{
+                $("#errmk").html("(*)");
+                $("#txtNhapLaiMK").removeClass("error");
+            }
+        }
+        return true;
+    
+    }
+    $("#txtNhapLaiMK").blur(function(e){
+      KiemMatNhapLaiKhau();
+    }); 
+    function resetvalue(){
+      $("#txtMaKhau").val("");
+      $("#txtTen").val("");
+      $("#txtNhapLaiMK").val("");
+      $("#txtEmail").val("");
+    }
+    $("#btnTao").click(function(){
+      var i = 1;
+      var mk = $("#txtMaKhau").val();
+      var ten = $("#txtTen").val();
+      $("#txtNhapLaiMK").val();
+      var email = $("#txtEmail").val();
+      var them = "<tr><td>" + (i++) + "</td><td>" + email + "</td><td>" + ten + "</td><td>" + mk + "</td></tr>";
+      if( KiemTraEmail()==true && KiemMatKhau() == true && KiemTraEmail() == true && KiemTraTen()==true && KiemMatNhapLaiKhau() == true){
+        alert("Tạo Thành công !");
+        $("table").append(them);
+        resetvalue();
+      }
+    })
+      });
+    </script>
+</head>
+<body>
+    <div class="all-content">
+        <nav class="navbar navbar-expand-md" id="navbar">
+            <!-- Brand -->
+            <a class="navbar-brand" href="./TrangChu.html" id="logo"><img src="./image/logo.png" alt="" width="50px">Cake</a>
+            <!-- Nút bật tắt/thu gọn -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+              <span><img src="./image/menu.png" alt="" width="30px"></span>
+            </button>
+          
+            <!-- Liên kết thanh điều hướng -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="TrangChu.html">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="thongtin.html">Thông tin</a>
+                </li>
+                <!-- dropdown -->
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+                        Sản phẩm
+                    </a>
+                    <div class="dropdown-menu">
+                      <a href="TrangChu.html#banh" class="dropdown-item">Bánh</a>
+                      <a href="TrangChu.html#keo" class="dropdown-item">Kẹo</a>
+                      <a href="TrangChu.html#socola" class="dropdown-item">Sô cô la</a>
+                  </div>
+                </li>
+                <!-- dropdown -->
+                <li class="nav-item">
+                  <a class="nav-link" href="lienhe.html">Liên hệ</a>
+                </li>
+              </ul>
+            </div>
+            <div class="icons">
+              <div class="" style="width: 300px;">
+                <div class="bg-white rounded shadow">
+                  <form action="">
+                    <div class="bg-light rounded rounded-pill shadow-sm">
+                      <div class="input-group">
+                        <input type="search" placeholder="Nhập từ bạn cần tìm?" aria-describedby="button-addon1" class="form-control border-0 bg-light">
+                        <div class="input-group-append">
+                          <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+                <img src="./image/heart.png" alt="" width="20px">
+                <img src="./image/add.png" alt="" width="25px">
+                <div id="li_acount" style="cursor: pointer; display: inline-block;" >
+                  <img src="./image/user.png" alt=""  width="25px">
+                  <ul id="ulnav_account" >
+                   <li><a href="login.html">Đăng nhập</a></li>
+                   <li><a href="signup.html" id="a_signin">Đăng ký</a></li>
+               </ul>
+               </div>
+                
+            </a>
+            </div>
+          </nav>
+    <div class="breadcrumb" style="background-color: black;">
+        <div class="container_content">
+            <p>CREATE ACCOUNT</p>
+            <a href="TrangChu.html">Home</a>
+            <span>/</span>
+            <span href="">Create Account</span>
+        </div>
+     
+    </div>
+    <div class="container_user">
+        <form action="" id="AccountForm">
+            <input type="email" name="" id="txtEmail" placeholder="Email">
+            <label for="" id="erma" style="color: red;">(*)</label>
+            <input type="text" name="" id="txtTen" placeholder="Họ và tên">
+            <label for="" id="erten" style="color: red;">(*)</label>
+            <input type="password" name="" id="txtMaKhau" placeholder="Mật khẩu">
+            <label for="" id="ermk" style="color: red;">(*)</label>
+            <input type="password" name="" id="txtNhapLaiMK" placeholder="Nhập lại mật khẩu">
+            <label for="" id="errmk" style="color: red;">(*)</label>
+            <p><input type="button" name="" id="btnTao" value="Tạo" style="float: left;">
+            <a href="TrangChu.html"> Quay Lại</a>
+            </p>
+        </form>
+    </div>
+    <section class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table table-bordered" style="color: #eee;">
+            <tr>
+                <th>STT</th>
+                <th>Email</th>
+                <th>Họ và tên</th>
+                <th>Mật khẩu</th>
+            </tr>
+        </table>
+        </div>
+      </div>
+    </section>
+    <footer>
+   
+            <div class="footer-top" style="background-color: #703f07;">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-3 footer-text-start">
+                      <img src="./image/logo.png" alt="" width="50px">
+                      <div class="address footer-top-flex">
+                          <i class="fas fa-home" style="color: #eee;"></i>
+                          <p style="color: #eee;">
+                              12 Nguyễn Văn Bảo
+                              <br>
+                              Phường 04, Gò Vấp, Thành phố Hồ Chí Minh
+                          </p>
+                      </div>
+                      <div class="phone footer-top-flex">
+                          <i class="fas fa-phone-alt"   style="color: #eee;"></i>
+                          <p style="color: #eee;">0123456789</p>
+                      </div>
+                      <div class="gmail footer-top-flex footer-top-hover">
+                          <i class="far fa-clock" style="color: #eee;"></i>
+                          <p><a href="" style="color: #eee; text-decoration: none;">nguyenluc1234012@gmail.com</a></p>
+                      </div>
+                      <div class="footer-top-logo">
+                          <ul class="footer-top-flex footer-top-hover">
+                              <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                              <li><a href="https://www.facebook.com/luc.nguyen.568294"><i class="fab fa-facebook"></i></a></li>
+                              <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                              <li><a href=""><i class="fab fa-youtube"></i></a></li>
+                          </ul>
+                      </div>
+                    </div>
+                    <div class="col-md-3 footer-text-start">
+                      <h5>Hỗ trợ</h5>
+                      <ul class="footer-top-hover">
+                          <li><a href="">Giao hàng</a></li>
+                          <li><a href="">Đơn đặt hàng</a></li>
+                          <li><a href="">Quan tâm</a></li>
+                          <li><a href="">Hoàn tiền và trả lại</a></li>
+                          <li><a href="">Danh mục đầu tư</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-md-3 footer-text-start">
+                      <h5>Thông tin</h5>
+                      <ul class="footer-top-hover">
+                          <li><a href="">Cụm từ tim kiếm</a></li>
+                          <li><a href="">Tìm kiếm nâng cao</a></li>
+                          <li><a href="">Trợ giúp và hỏi đáp</a></li>
+                          <li><a href="">Vị trí cửa hàng</a></li>
+                          <li><a href="">Đặt hàng và trả lại</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-md-3 footer-text-start">
+                      <h5>Giúp đỡ</h5>
+                      <ul class="footer-top-hover">
+                          <li><a href="">Tìm kiếm</a></li>
+                          <li><a href="">Giúp đỡ</a></li>
+                          <li><a href="">Thông tin</a></li>
+                          <li><a href="">Chính sách bảo mật</a></li>
+                          <li><a href="">Chi tiết vận chuyển</a></li>
+                      </ul>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer-bottom">
+                <div class="container">
+                  <div class="row">
+                    <div class="footer-bottom-copyright">
+                      <p style="color: #eee;">© 2023 Cake Theme Design Themes</p>
+                  </div>
+                  </div>
+                </div>
+              </div>
+    
+    </footer>
+</div>
+    <script>
+   
+   const li_acount = document.getElementById('li_acount');
+   const ulnav_account = document.getElementById('ulnav_account');
+   // Khởi tạo biến boolean để lưu trạng thái của menu
+let isSubMenuOpen = false;
+
+// Gán sự kiện click cho button
+li_acount.addEventListener('click', function(e) {
+  if (isSubMenuOpen) {
+    // Nếu menu đang mở, thì ẩn nó đi
+    ulnav_account.style.display = 'none';
+    isSubMenuOpen = false;
+  } else {
+    // Nếu menu đang ẩn, thì hiện nó lên
+    ulnav_account.style.display = 'block';
+    isSubMenuOpen = true;
+  }
+  
+  // Ngăn chặn sự kiện click trên document được kích hoạt
+  e.stopPropagation();
+});
+
+// Gán sự kiện click trên document
+document.addEventListener('click', function() {
+  // Nếu menu đang mở, thì ẩn nó đi
+  if (isSubMenuOpen) {
+    ulnav_account.style.display = 'none';
+    isSubMenuOpen = false;
+  }
+});
+    </script>
+</body>
+</html>
