@@ -17,7 +17,7 @@
     <script src="./js/script.js"></script>
     <script src="./js/datajson.js"></script>
     <link rel="stylesheet" href="./css/styleInfo.css">
-    <link rel="stylesheet" href="css/styleHome.css">
+    <link rel="stylesheet" href="./css/styleHome.css">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
   
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,14 +55,14 @@
                     Sản phẩm
                 </a>
                 <div class="dropdown-menu">
-                  <a href="TrangChu.html#banh" class="dropdown-item">Bánh</a>
-                  <a href="TrangChu.html#keo" class="dropdown-item">Kẹo</a>
-                  <a href="TrangChu.html#socola" class="dropdown-item">Sô cô la</a>
+                  <a href="./TrangChu.html#banh" class="dropdown-item">Bánh</a>
+                  <a href="./TrangChu.html#keo" class="dropdown-item">Kẹo</a>
+                  <a href="./TrangChu.html#socola" class="dropdown-item">Sô cô la</a>
               </div>
             </li>
             <!-- dropdown -->
             <li class="nav-item">
-              <a class="nav-link" href="#">Liên hệ</a>
+              <a class="nav-link" href="./lienhe.html">Liên hệ</a>
             </li>
           </ul>
         </div>
@@ -83,7 +83,13 @@
             </div>
             <img src="./image/heart.png" alt="" width="30px">
             <img src="./image/add.png" alt="" width="35px">
-            <img src="./image/user.png" alt="" width="30px">
+            <div id="li_acount" style="cursor: pointer; display: inline-block;" >
+              <img src="./image/user.png" alt=""  width="25px">
+              <ul id="ulnav_account" >
+               <li><a href="./login.html">Đăng nhập</a></li>
+               <li><a href="./signup.html" id="a_signin">Đăng ký</a></li>
+              </ul>
+             </div>
         </div>
       </nav>
     <!-- navbar end -->
@@ -92,7 +98,7 @@
         <div class="row">
           <nav class="text-center col-md-12">
             <p>SẢN PHẨM</p>
-            <span><a href="TrangChu.html">Trang chủ </a></span> <span>/</span> <span>Sản phẩm</span>
+            <span><a href="./TrangChu.html">Trang chủ </a></span> <span>/</span> <span>Sản phẩm</span>
           </nav>
         </div>
       </div>
@@ -323,25 +329,31 @@
   function datHang() {
     window.location.href = "./dathang.html";
   }
-  // $(document).ready(function () {
-
-  // let dssp = JSON.parse(localStorage.getItem("dssp"))
-  // let masp = localStorage.getItem("masp")
-
-  // let temp = dssp.find(sp => sp.masp == masp)
-
-  // $("#tensp").html(temp.tensp)
-  // $("#dongia").html(temp.dongia)
-  // $("#mota").html(temp.mota)
-  // function napSP(sp) {
-  //     let temp = "<img src='" + sp.hinhanh + "' alt=''>"
-  //     $("#ha").html(temp)
-  // }
-  // $(document).ready(function () {
-  //     dssp.forEach(sp => {
-  //         napSP(temp)
-  //       });
-  //   });
-  // });
+  const li_acount = document.getElementById('li_acount');
+   const ulnav_account = document.getElementById('ulnav_account');
+   // Khởi tạo biến boolean để lưu trạng thái của menu
+let isSubMenuOpen = false;
+// Gán sự kiện click cho button
+li_acount.addEventListener('click', function(e) {
+  if (isSubMenuOpen) {
+    // Nếu menu đang mở, thì ẩn nó đi
+    ulnav_account.style.display = 'none';
+    isSubMenuOpen = false;
+  } else {
+    // Nếu menu đang ẩn, thì hiện nó lên
+    ulnav_account.style.display = 'block';
+    isSubMenuOpen = true;
+  }
+  // Ngăn chặn sự kiện click trên document được kích hoạt
+  e.stopPropagation();
+});
+// Gán sự kiện click trên document
+document.addEventListener('click', function() {
+  // Nếu menu đang mở, thì ẩn nó đi
+  if (isSubMenuOpen) {
+    ulnav_account.style.display = 'none';
+    isSubMenuOpen = false;
+  }
+});
 </script>
 </html>
