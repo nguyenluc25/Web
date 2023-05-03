@@ -172,7 +172,6 @@
      transition: all 0.3s linear;
      outline: none;
      font-size: 17px;
-     
    }
    .container_user>#AccountForm>input[type=text]{
     margin-top: 40px;
